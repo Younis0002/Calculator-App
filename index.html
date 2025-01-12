@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="calc.css">
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" href="icon-192.png" type="image/png">
+        <script>
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("service_worker.js").then(() => {
+                    console.log("Service Worker Registered");
+                });
+            }
+        </script>
+    </head>    
+<body>
+    <div class="calculator">
+        <h1 style="color: rgb(255, 255, 255);">Calculator</h1>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <p class="result" id="result"></p>
+        <div class="operations">
+            <button onclick="calculate('+')">+</button>
+            <button onclick="calculate('-')">-</button>
+            <button onclick="calculate('*')">x</button>
+            <button onclick="calculate('/')">/</button>
+            <button onclick="calculate('%')">%</button>
+            <button onclick="calculate('^')">^</button>
+            <button onclick="clearAll()">C</button>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
